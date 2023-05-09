@@ -12,8 +12,8 @@ This endpoint allows users to create an account by providing their name, email, 
 
 The request body should be a JSON object with the following fields:
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
+| Field | Type | Required | 
+|-------|------|----------|
 | name | string | Yes | The user's name |
 | email | string | Yes | The user's email address |
 | user_role | string | Yes | The user's role, e.g., "admin", "user", etc. |
