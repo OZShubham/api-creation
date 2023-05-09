@@ -1,3 +1,6 @@
+## Overview
+This API allows users to create jira title along with id and jira description by sending a request to the `/api/create_jira_id` endpoint. 
+
 
 ## Endpoint
 - `POST /api/create_jira_id`
