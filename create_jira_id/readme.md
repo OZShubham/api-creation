@@ -7,8 +7,8 @@ This API allows users to create jira title along with id and jira description by
 
 ## Request
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
+| Field | Type | Required |
+|-------|------|----------|
 | poker_board_id | string | Yes | 
 | jira_id | string | Yes |
 | jira_description | string | Yes |
