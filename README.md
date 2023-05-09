@@ -1,4 +1,4 @@
-Sure, here's a more detailed documentation of the Flask API for user authentication:
+
 
 ## API Documentation
 
