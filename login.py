@@ -32,14 +32,6 @@ def login():
                     return jsonify({'success': True,
                                 'message': 'Sign-in successful'}), 201
                     
-                    
-                       
-                    
-
-
-
-                   
-
                 else:
                     # Passwords don't match, return error
                     flash("Incorrect Password!", "info")
