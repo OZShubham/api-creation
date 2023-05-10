@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from google.cloud import datastore
+import bcrypt
 
 app = Flask(__name__)
 
@@ -26,7 +27,8 @@ def reset_password():
         user = result[0]
 
         # Update user's password in Datastore
-        user['password'] = new_password
+        hashed_password = bcrypt.hashpw(new_password.encode('utf-8'), bcrypt.gensalt())
+        user['password'] = hashed_password.decode('utf-8') 
         datastore_client.put(user)
 
         return jsonify({'success': 'Password reset successfully!'}), 200
