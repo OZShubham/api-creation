@@ -6,7 +6,7 @@ This API allows users to sign up by sending a POST request to the `/api/signup` 
 ## Endpoints
 
 ### POST /api/signup
-This endpoint allows users to create an account by providing their name, email, user role, password, and confirm password.
+This endpoint allows users to create an account by providing their name, email, user role, password.
 
 #### Request Body
 
@@ -18,7 +18,7 @@ The request body should be a JSON object with the following fields:
 | email | string | Yes | The user's email address |
 | user_role | string | Yes | The user's role, e.g., "admin", "user", etc. |
 | password | string | Yes | The user's password |
-| confirm_password | string | Yes | A confirmation of the user's password |
+
 
 Example Request Body:
 ```
@@ -28,7 +28,7 @@ Example Request Body:
     'user_id': 'test@example.com',
     'user_role': 'team member',
     'password': '123',
-    'confirm_password': '123'
+    
 }
 ```
 
@@ -37,7 +37,6 @@ Example Request Body:
 | Status Code | Response Body | Description |
 |-------------|---------------|-------------|
 | 201 | `{"success": "Account Created Successfully!"}` | Account was created successfully |
-| 400 | `{"error": "Password and Confirm Password do not match"}` | Password and confirm password fields did not match |
 | 400 | `{"error": "User with this email already exists"}` | A user with this email address already exists |
 
 ## Libraries used
