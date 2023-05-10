@@ -21,7 +21,7 @@ def create_poker_board():
         poker_board_type = data['poker_board_type']
 
         if not team_id or not poker_board_type or not poker_board_name or not email:
-            return jsonify({'error': 'Bad Request. Please fill all the fields correctly.'}), 400
+            return jsonify({'error': 'Bad Request. Please provide all the fields. i.e. team_id, poker_board_type, poker_board_name, email'}), 400
 
         
         def create_board_id(user_id):
