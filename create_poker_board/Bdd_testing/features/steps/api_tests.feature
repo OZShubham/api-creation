@@ -2,7 +2,10 @@ Feature: Create Poker Board API
 
 Scenario: Successful creation of a poker board
     Given a user with email "rahul@gmail.com"
-    When they create a poker board with name "Board 1", team ID "123", and type "Fibonacci Number"
+    When they create poker board with the following details
+        | name    | team ID | type              |
+        | Board 3 | 123     | Fibonacci Number  |
+        | Board 4 | 123     | T-shirt Sizing  |
     Then they should receive a success response with status code 201
 
 Scenario: Invalid request method

@@ -8,16 +8,17 @@ BASE_URL = 'https://create-retro-board-noxhrtfvua-el.a.run.app'
 def step_given_user_with_email(context, email):
     context.email = email
 
-@behave.when('they create a retro board with name "{board_name}", team ID "{team_id}", and id "{board_id}"')
-def step_when_create_retro_board(context, board_name, team_id, board_id):
-    data = {
+@behave.when('they create retro board with the following details')
+def step_when_create_retro_board(context):
+    for row in context.table:
+        data = {
         'email': context.email,
-        'retro_board_name': board_name,
-        'team_id': team_id,
-        'poker_board_id': board_id
-    }
-    response = requests.post(BASE_URL + '/api/create_retro_board', json=data)
-    context.response = response
+        'retro_board_name': row['board_name'],
+        'team_id': row['team_id'],
+        'poker_board_id': row['board_id']
+        }
+        response = requests.post(BASE_URL + '/api/create_retro_board', json=data)
+        context.response = response
 
 @behave.then('they should receive a success response with status code {status_code}')
 def step_then_receive_success_response(context, status_code):
