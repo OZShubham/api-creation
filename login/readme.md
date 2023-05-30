@@ -73,4 +73,3 @@ Example Response Body:
 }
 ```
 
-Please note that this is a basic example, and you may want to customize the documentation further to include additional details, such as API authentication requirements or response schema definitions.
