@@ -1,24 +1,17 @@
 import requests
 
-# Set the URL of the Cloud Run service
 url = 'https://grant-user-access-tkstnehxga-el.a.run.app/api/grant_user_access'
-
-# Set the JSON data to send in the request
-data = {
+payload = {
     'email': 'babu@gmail.com',
-    'poker_board_id': '15544fa60c8218588fcbbaf6a245b261',
-    'user_ids': ['test@example.com']
+    'poker_board_id': 'dd28636345a0f55b454fda8f1e7f3791',
+    'user_id_list': ['retro@gmail.com']
 }
 
-# Send the POST request with the JSON payload and headers
-response = requests.post(url, json=data)
+response = requests.post(url, json=payload)
 
-# Check the response status code and content
 if response.status_code == 200:
-    print('Access granted successfully!')
+    print('Access granted successfully')
+    print(response.json())
 else:
-    print(f'Error granting access: {response.status_code} {response.json()}')
-
-
-
-
+    print('Error:', response.status_code)
+    print(response.json())
