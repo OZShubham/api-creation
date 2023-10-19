@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .result {
+            margin-bottom: 10px;
+        }
+        
+        .passed {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .failed {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Results</h1>
+    
+    <div class="result">
+        <h2>Scenarios:</h2>
+        <p>Passed: <span class="passed">{{ response['scenarios passed'] }}</span></p>
+        <p>Failed: <span class="failed">{{ response['scenarios failed'] }}</span></p>
+    </div>
+    
+    <div class="result">
+        <h2>Features:</h2>
+        <p>Passed: <span class="passed">{{ response['feature passed'] }}</span></p>
+        <p>Failed: <span class="failed">{{ response['feature failed'] }}</span></p>
+    </div>
+    
+    <div class="result">
+        <h2>Steps:</h2>
+        <p>Passed: <span class="passed">{{ response['steps passed'] }}</span></p>
+        <p>Failed: <span class="failed">{{ response['steps failed'] }}</span></p>
+    </div>
+</body>
+</html>
